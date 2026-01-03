@@ -10,7 +10,7 @@
 # 🧩 **Submodule 1.1.1: Definition of Recursion**
 ## 🟢 1. What it is (Concept)
 
-- **Recursion** is a problem-solving technique  where:
+- **Recursion** is a problem-solving technique where:
     
     - A function **calls itself**
         
