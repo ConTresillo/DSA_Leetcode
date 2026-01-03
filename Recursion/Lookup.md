@@ -10,7 +10,7 @@
         
     - Direct vs indirect recursion
         
-    - Mathematical vs programmatic recursion
+    - Mathematical vs programmatic  recursion
         
 - **Submodule 1.1.2: Base Case**
     
