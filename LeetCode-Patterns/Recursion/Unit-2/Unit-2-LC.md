@@ -33,7 +33,7 @@ _(No optimization required — just recognition)_
 
 ### Medium
 
-#### 🔟 **[LC 100 — Same Tree](LC-Qns/LC-100.md)**
+#### 🔟 **[LC 100 — Same Tree](LC-100.md)**
 
 - Dual recursion on two trees
     
