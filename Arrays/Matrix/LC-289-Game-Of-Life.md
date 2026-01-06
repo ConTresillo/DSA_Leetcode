@@ -10,7 +10,8 @@ class Solution {
 
         int[] cols = { 0,  1, 1, 1, 0, -1, -1, -1};
 
-  
+  // Could have used for loop from -1 to 1 then do all 9 combinations
+  // U can
 
     boolean isValidBounds(int m, int n, int i, int j){
 

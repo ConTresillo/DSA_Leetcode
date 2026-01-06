@@ -75,7 +75,30 @@
     - Split → solve → combine
         
     - Balanced vs unbalanced splits
+    
+- **Submodule 2.2.3: Return Contracts & Combine Invariants** _(added)_
+    
+    - Defining the return contract before implementation
         
+    - Return vocabulary and meaning mapping
+        
+    - Combine rules for merging child results
+        
+    - Preventing information loss during unwinding
+        
+    - When a single return value encodes multiple states
+        
+- **Submodule 2.2.4: Failure Modes in Tree Recursion** _(added)_
+    
+    - Case explosion from missing contracts
+        
+    - Early returns that kill propagation
+        
+    - Path-based thinking in non-path problems
+        
+    - Overuse of flags, wrappers, or globals
+        
+    - Diagnosing overcomplicated recursion    
 
 ### 🧱 **UNIT 3: Decision & Enumeration Patterns**
 

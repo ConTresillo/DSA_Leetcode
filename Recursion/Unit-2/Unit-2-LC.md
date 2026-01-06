@@ -6,9 +6,9 @@ _(No optimization required — just recognition)_
 
 #### 6️⃣ **[LC 172 — Factorial Trailing Zeroes (Recursive reasoning)](https://leetcode.com/problems/factorial-trailing-zeroes/description/)**
 
-## [Solution](Unit-2-LC-Qns/LC-172.md)
+## [Solution](LC-172.md)
 #### 7️⃣ **[LC 150 — Evaluate Reverse Polish Notation (Recursive)](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/))**
-## [Solution](Unit-2-LC-Qns/LC-150)
+## [Solution](LC-150.md)
 
 ### 🌳 SECTION C — Tree Recursion (Multiple Recursive Calls)
 
@@ -19,9 +19,9 @@ _(No optimization required — just recognition)_
 - Two recursive calls
     
 - Pure structural recursion
-##### [Solution](Unit-2-LC-Qns/LC-226)
+##### [Solution](LC-226.md)
 
-#### 9️⃣ **LC 101 — Symmetric Tree**
+#### 9️⃣ **[LC 101 — Symmetric Tree](LC-101.md)**
 
 - Parallel tree recursion
     
@@ -33,7 +33,7 @@ _(No optimization required — just recognition)_
 
 ### Medium
 
-#### 🔟 **LC 100 — Same Tree**
+#### 🔟 **[LC 100 — Same Tree](LC-Qns/LC-100.md)**
 
 - Dual recursion on two trees
     
