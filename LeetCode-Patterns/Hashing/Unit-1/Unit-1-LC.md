@@ -46,28 +46,28 @@
   https://leetcode.com/problems/group-anagrams/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-347|347. Top K Frequent Elements]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-347|347. Top K Frequent Elements]]**
 
   _Frequency map + extraction logic_
 
   https://leetcode.com/problems/top-k-frequent-elements/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-451|451. Sort Characters By Frequency]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-451|451. Sort Characters By Frequency]]**
 
   _Counting → ordering_
 
   https://leetcode.com/problems/sort-characters-by-frequency/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-442|442. Find All Duplicates in an Array]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-442|442. Find All Duplicates in an Array]]**
 
   _Frequency logic (ignore in-place trick for now)_
 
   https://leetcode.com/problems/find-all-duplicates-in-an-array/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-350|350. Intersection of Two Arrays II]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-1/LC-Qns/LC-350|350. Intersection of Two Arrays II]]**
 
   _Frequency decrement invariant_
 

@@ -1,320 +1,242 @@
-# 🧩 Submodule 2.1.1 — Single Recursive Call Pattern
+### 🧱 **UNIT 1: Recursion Fundamentals**
 
-## 🟢 1. What it is (Concept)
+**Goal:** Build the mental model required to reason about any recursive solution.
 
-**Linear recursion**: each function call makes **exactly one recursive call**.
+#### 📦 Module 1.1: Core Recursion Mechanics
 
-- Each call reduces the problem to a smaller instance  
-    (usually by decrementing a counter or moving along a structure like an array, string, or list).
+- **Submodule 1.1.1: Definition of Recursion**
     
-- Depth of recursion grows linearly with input size → **stack grows O(n)**.
+    - Self-referential function concept
+        
+    - Direct vs indirect recursion
+        
+    - Mathematical vs programmatic recursion
+        
+- **Submodule 1.1.2: Base Case**
     
-
-### Tail vs Non-tail Distinction
-
-- **Tail recursion**: recursive call is the **last operation** in the function.
+    - Termination condition
+        
+    - Single vs multiple base cases
+        
+    - Consequences of missing base case
+        
+- **Submodule 1.1.3: Recursive Case**
     
-- **Non-tail recursion**: additional computation happens **after** the recursive call returns.
+    - Problem size reduction
+        
+    - Relationship to base case
+        
+    - Progress guarantee
+        
+- **Submodule 1.1.4: Call Stack Behavior**
     
+    - Stack frames
+        
+    - Function state preservation
+        
+    - Stack overflow conditions
+        
 
-### Fundamental For Problems Like
+### 🧱 **UNIT 2: Structural Recursion Patterns**
 
-- Factorial calculation
+**Goal:** Recognize recursion based on input structure.
+
+#### 📦 Module 2.1: Linear Recursion
+
+- **Submodule 2.1.1: Single Recursive Call Pattern**
     
-- Sum of array elements
+    - One recursive call per function
+        
+    - Linear depth growth
+        
+    - Tail vs non-tail distinction
+        
+- **Submodule 2.1.2: Tail Recursion**
     
-- Finding maximum / minimum in a list
+    - Last operation recursion
+        
+    - Accumulator usage
+        
+    - Optimization relevance
+        
+
+#### 📦 Module 2.2: Tree Recursion
+
+- **Submodule 2.2.1: Multiple Recursive Calls**
     
-- String length computation
+    - Branching factor
+        
+    - Recursive tree growth
+        
+    - Overlapping subproblems
+        
+- **Submodule 2.2.2: Divide and Conquer Structure**
     
-
----
-
-## 🔵 2. Why it exists (Purpose / Use-case)
-
-- Mirrors sequential structure in inputs.
+    - Split → solve → combine
+        
+    - Balanced vs unbalanced splits
     
-- Provides a clean and elegant way to break down linear problems.
+- **Submodule 2.2.3: Return Contracts & Combine Invariants** _(added)_
     
-- Helps understand **call stack behavior** and **recursion depth**.
+    - Defining the return contract before implementation
+        
+    - Return vocabulary and meaning mapping
+        
+    - Combine rules for merging child results
+        
+    - Preventing information loss during unwinding
+        
+    - When a single return value encodes multiple states
+        
+- **Submodule 2.2.4: Failure Modes in Tree Recursion** _(added)_
     
+    - Case explosion from missing contracts
+         
+    - Early returns that kill propagation
+        
+    - Path-based thinking in non-path problems
+        
+    - Overuse of flags, wrappers, or globals
+        
+    - Diagnosing overcomplicated recursion    
 
-**Exams often test:**
+### 🧱 **UNIT 3: Decision & Enumeration Patterns**
 
-- Ability to trace recursion
+**Goal:** Handle problems involving choices, paths, and combinations.
+
+#### 📦 Module 3.1: Choice-Based Recursion
+
+- **Submodule 3.1.1: Pick / Not Pick Pattern**
     
-- Identifying tail vs non-tail recursion
+    - Binary decision tree
+        
+    - Inclusion–exclusion structure
+        
+- **Submodule 3.1.2: Multiple Choice Recursion**
     
-- Computing time and space complexity
+    - Iterative branching inside recursion
+        
+    - Loop + recursive call pattern
+        
+
+#### 📦 Module 3.2: Backtracking Core Pattern
+
+- **Submodule 3.2.1: State → Explore → Undo**
     
-
-Without recursion, iterative loops can solve these problems, but **structural recursion emphasizes decomposition**, not just execution.
-
----
-
-## 🟣 3. Core Components / Terminology
-
-- **Base Case** → stops recursion and prevents infinite calls
+    - State modification
+        
+    - Recursive exploration
+        
+    - Reversal (backtrack step)
+        
+- **Submodule 3.2.2: Constraint Pruning**
     
-- **Recursive Call** → single call with updated parameter(s)
+    - Early termination logic
+        
+    - Validity checks before recursion
+        
+
+### 🧱 **UNIT 4: Problem-Type–Driven Patterns**
+
+**Goal:** Map problem statements directly to recursion templates.
+
+#### 📦 Module 4.1: Subset & Combination Patterns
+
+- **Submodule 4.1.1: Subset Generation**
     
-- **Accumulator / Local Variable** → stores intermediate results (used in tail recursion)
+    - Power set structure
+        
+    - Depth = input size
+        
+- **Submodule 4.1.2: Combination Sum–Type Patterns**
     
-- **Call Stack** → holds function frames; grows linearly
+    - Reuse vs non-reuse of elements
+        
+    - Index-controlled recursion
+        
+
+#### 📦 Module 4.2: Permutation Patterns
+
+- **Submodule 4.2.1: Fixed Position Recursion**
     
-- **Tail vs Non-tail** → determines whether tail-call optimization is possible
+    - Swapping logic
+        
+    - Position-based decisions
+        
+- **Submodule 4.2.2: Used-Array / Visited Pattern**
     
+    - Tracking chosen elements
+        
+    - Avoiding reuse
+        
 
----
+### 🧱 **UNIT 5: Recursion on Data Structures**
 
-## 🧪 4. Structure / Logical Flow
+**Goal:** Apply recursion where the data structure naturally suggests it.
 
-### Stepwise Approach
+#### 📦 Module 5.1: Array & String Recursion
 
-1. Check base case first
+- **Submodule 5.1.1: Index-Based Recursion**
     
-2. Perform local computation if needed
+    - Start/end pointer movement
+        
+    - Shrinking problem window
+        
+
+#### 📦 Module 5.2: Linked List Recursion
+
+- **Submodule 5.2.1: Head–Rest Decomposition**
     
-3. Make one recursive call with updated arguments
+    - Current node processing
+        
+    - Recursive call on next node
+        
+
+#### 📦 Module 5.3: Tree Recursion
+
+- **Submodule 5.3.1: Preorder / Inorder / Postorder Patterns**
     
-4. If non-tail, process returned result
+    - Visit placement logic
+        
+    - Recursive traversal structure
+        
+
+### 🧱 **UNIT 6: Optimization & Limits**
+
+**Goal:** Understand why naïve recursion fails and how to fix it.
+
+#### 📦 Module 6.1: Overlapping Subproblems
+
+- **Submodule 6.1.1: Exponential Blow-Up**
     
-5. Return value propagates up the stack
+    - Repeated computations
+        
+    - Recursive tree visualization
+        
+
+#### 📦 Module 6.2: Memoization Bridge
+
+- **Submodule 6.2.1: Recursion → DP Transition**
     
+    - State definition
+        
+    - Cache usage logic
+        
 
-### Visual Stack Example (n = 3)
+### 🧱 **UNIT 7: Recursion Thinking for Interviews**
 
-`sum(3)`
+**Goal:** Convert intuition into structured answers.
 
-	`-> sum(2)`
+#### 📦 Module 7.1: Recursion Framing
 
-		`-> sum(1)`
-
-			`-> sum(0) // base case`
-
-			`<- returns 0`
-
-		`<- add 1`
-
-	`<- add 2`
-
-`<- add 3`
-
----
-
-## 🛠️ 5. Deep Example / Case Study
-
-### Problem: Sum of first `n` natural numbers
-
-#### Non-tail Recursion
-
-`int sum(int n) {`
-
-`if(n == 0) return 0; // Base Case`
-
-`return n + sum(n-1); // Single recursive call, non-tail`
-
-`}``
-
-![[Pasted image 20260104173217.png]]
-#### Tail Recursion
-
-`int sum(int n, int acc) {`
-
-`if(n == 0) return acc;`
-
-`return sum(n-1, acc+n); // Last operation is recursive call`
-
-`}`
-![[Pasted image 20260104173300.png]]
-
-**Note:** Tail recursion allows stack optimization (if supported).
-
----
-
-## ⚠️ 7. Common Mistakes & Pitfalls
-
-- Forgetting the base case → stack overflow
+- **Submodule 7.1.1: How to Think Recursively**
     
-- Misidentifying tail vs non-tail recursion
+    - Faith in recursion
+        
+    - Function contract mindset
+        
+- **Submodule 7.1.2: Common Interview Failure Points**
     
-- Performing unintended work after recursion
-    
-- Confusing single recursion with multiple recursion
-    
-- Over-parameterization when simple state tracking suffices
-    
-
----
-
-## 🧠 8. Memory Hook
-
-> “One branch at a time, depth grows linearly”
-
-- Base case stops recursion
-    
-- Stack unwinds
-    
-- Results accumulate during return
-    
-
----
-
-## 📝 9. Ultra-Short Revision Sheet
-
-- Single recursive call → linear depth **O(n)**
-    
-- Base case prevents infinite recursion
-    
-- Tail recursion → last operation
-    
-- Non-tail recursion → work after return
-    
-- Stack stores local variables and return addresses
-    
-- Example problems: factorial, array sum, max in list
-    
-- Exams: trace calls, explain stack growth, identify tail recursion
-
-# 🧩 Submodule 2.1.2 — Tail Recursion
-
-## 🟢 1. What it is (Concept)
-
-**Tail recursion** is a special case of linear recursion where:
-
-- The recursive call is the **very last operation** executed in the function.
-- No computation is pending after the recursive call returns.
-- The current function frame does **not depend** on results from deeper calls.
-- Logical consequence: the current stack frame is **replaceable** by the next one.
-
-### Key Defining Property (Must Be True)
-
-- ✔️ `return recursiveCall(...)`
-- ❌ `return something + recursiveCall(...)` → **NOT tail recursion**
-
----
-
-## 🔵 2. Why it exists (Purpose / Motivation)
-
-- Solves the stack growth problem of normal recursion.
-- Enables **Tail Call Optimization (TCO)** in languages/compilers that support it.
-- Makes recursion **memory-equivalent to iteration**.
-- Allows safe execution for large input sizes.
-
-**Exam focus areas:**
-- Stack frame behavior
-- Optimization potential
-- Difference between *conceptual recursion* and *execution behavior*
-
-**If tail recursion didn’t exist:**
-- Even linear problems could cause stack overflow.
-- Recursion would be impractical for large constraints.
-
----
-
-## 🟣 3. Core Components / Terminology
-
-- **Tail Position** → position where the recursive call is the last executed statement.
-- **Accumulator** → parameter carrying partial results forward.
-- **State Passing** → all required state passed via parameters.
-- **Tail Call Optimization (TCO)** → compiler/runtime replaces recursion with iteration  
-  *(language-dependent)*.
-
----
-
-## 🧪 4. Structure / Logical Flow
-
-### General Tail-Recursive Pattern
-
-- Base case returns accumulated result directly.
-- Recursive call updates the accumulator.
-- No work remains after the recursive call.
-
-### Stack Behavior
-
-- **Conceptually** recursive
-- **Physically** behaves like a loop (if optimized)
-
----
-
-## 🛠️ 5. Deep Example / Case Study
-
-### Example 1: Factorial
-
-#### ❌ Non-Tail Recursive Factorial
-- Pending multiplication remains.
-- Stack frames cannot be discarded.
-
-#### ✅ Tail Recursive Factorial
-- Accumulator holds the result.
-- No pending work after the call.
-
----
-
-### Example 2: Climbing Stairs (Conceptual)
-
-- Naive recursion → tree recursion → exponential complexity.
-- Tail recursion collapses the problem into **linear state transitions**.
-
----
-
-## 🎯 6. Exam Perspective
-
-### Common Questions
-
-- Identify whether a function is tail recursive.
-- Convert non-tail recursion to tail recursion.
-- Explain stack usage differences.
-
-### Marking Focus
-
-- Correct identification of **tail position**.
-- Proper **accumulator** usage.
-
-### Mandatory Keywords
-
-- tail position  
-- accumulator  
-- stack frame reuse  
-- optimization potential  
-
----
-
-## ⚠️ 7. Common Mistakes & Traps
-
-- Assuming “single recursive call = tail recursion” ❌
-- Leaving hidden computation after recursion.
-- Using an accumulator but still doing work after the call.
-- Assuming Java guarantees TCO ❌ (it does not).
-- Overusing accumulators when simple recursion is clearer.
-
----
-
-## 🧠 8. Memory Hook (Logical)
-
-- If recursion **returns a value** → not tail recursion.
-- If recursion **returns immediately** → tail recursion.
-- Accumulator = future result moved into the present.
-
----
-
-## 📝 9. Ultra-Short Revision Sheet
-
-- Tail recursion = recursive call is the last operation.
-- Uses accumulator to carry results.
-- No pending computation → stack frames reusable.
-- Optimizable to iteration (language-dependent).
-- Safer for large inputs.
-- Exams: identify, convert, explain stack difference.
-
----
-
-## 📌 Expected Exam Keywords
-
-- tail recursion  
-- tail position  
-- accumulator  
-- state passing  
-- stack frame reuse  
-- tail call optimization  
-  
+    - Stack misunderstanding
+        
+    - Incorrect base cases

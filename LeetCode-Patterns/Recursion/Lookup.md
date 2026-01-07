@@ -91,7 +91,7 @@
 - **Submodule 2.2.4: Failure Modes in Tree Recursion** _(added)_
     
     - Case explosion from missing contracts
-        
+         
     - Early returns that kill propagation
         
     - Path-based thinking in non-path problems
