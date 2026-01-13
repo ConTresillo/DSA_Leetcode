@@ -7,7 +7,7 @@
   https://leetcode.com/problems/ransom-note/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-205|205. Isomorphic Strings]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-205|205. Isomorphic Strings]]**
 
   _Bijective state mapping under constraints_
 
@@ -18,14 +18,14 @@
 
 ## ⚠️ Unit-2 LeetCode — MEDIUM
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-438|438. Find All Anagrams in a String]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-438|438. Find All Anagrams in a String]]**
 
   _Fixed-size sliding window + frequency invariant_
 
   https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-567|567. Permutation in String]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-567|567. Permutation in String]]**
 
   _Exact-length window hashing_
 
