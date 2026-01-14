@@ -32,28 +32,28 @@
   https://leetcode.com/problems/permutation-in-string/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-3|3. Longest Substring Without Repeating Characters]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-3|3. Longest Substring Without Repeating Characters]]**
 
   _Dynamic sliding window + seen-state hashing_
 
   https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-904|904. Fruit Into Baskets]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-904|904. Fruit Into Baskets]]**
 
   _Window with bounded distinct count_
 
   https://leetcode.com/problems/fruit-into-baskets/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-1004|1004. Max Consecutive Ones III]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-1004|1004. Max Consecutive Ones III]]**
 
   _Window + violation counting_
 
   https://leetcode.com/problems/max-consecutive-ones-iii/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-424|424. Longest Repeating Character Replacement]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-424|424. Longest Repeating Character Replacement]]**
 
   _Relaxed window constraint + frequency max_
 
