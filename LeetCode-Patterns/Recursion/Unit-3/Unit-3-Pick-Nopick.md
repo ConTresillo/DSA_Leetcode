@@ -1,6 +1,6 @@
 ## ✅ Recursion Unit-3 LeetCode — EASY
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-78|78. Subsets]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-78|78. Subsets]]**
 
   _Enumerate choices: include/exclude each element_
 
@@ -10,13 +10,13 @@
 
 ## ⚠️ Recursion Unit-3 LeetCode — MEDIUM
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-77|77. Combinations]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-77|77. Combinations]]**
 
   _Generate all size-k combinations from 1..n_
 
   https://leetcode.com/problems/combinations/
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-90|90. Subsets II]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-90|90. Subsets II]]**
 
   _Subsets with duplicates, skip repeated choices_
 
