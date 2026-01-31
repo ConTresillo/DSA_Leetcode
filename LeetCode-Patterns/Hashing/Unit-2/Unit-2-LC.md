@@ -7,7 +7,7 @@
   https://leetcode.com/problems/ransom-note/
 
 
-- [ ] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-205|205. Isomorphic Strings]]**
+- [x] **[[LeetCode-Patterns/Hashing/Unit-2/LC-Qns/LC-205|205. Isomorphic Strings]]**
 
   _Bijective state mapping under constraints_
 
