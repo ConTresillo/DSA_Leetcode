@@ -22,13 +22,13 @@
 
   https://leetcode.com/problems/subsets-ii/
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-39|39. Combination Sum]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-39|39. Combination Sum]]**
 
   _Choice with reuse vs skip (decision branching)_
 
   https://leetcode.com/problems/combination-sum/
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-216|216. Combination Sum III]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-3/LC-Qns/LC-216|216. Combination Sum III]]**
 
   _Enumerate fixed-length combinations (with constraints)_
 

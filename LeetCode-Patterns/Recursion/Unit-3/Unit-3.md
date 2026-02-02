@@ -1,15 +1,14 @@
 
 ---
 
-# 🧱 UNIT 3 — Decision & Enumeration Patterns
 
-## 📦 Module 3.1 — Choice-Based Recursion
+# 📦 Module 3.1 — Choice-Based Recursion
 
-### 🧩 Submodule 3.1.1 — **Pick / Not Pick Pattern**
+## 🧩 Submodule 3.1.1 — **Pick / Not Pick Pattern**
 
 ---
 
-## 🟢 1. Mental Model
+### 🟢 1. Mental Model
 
 This pattern is **not** about recursion.  
 It is **not** about trees.  
@@ -41,7 +40,7 @@ It becomes **inevitable**.
 
 ---
 
-## 🔵 2. Why This Exists
+### 🔵 2. Why This Exists
 
 This pattern exists because **some problems do not allow creativity**.
 
@@ -93,7 +92,7 @@ Ignoring this pattern leads to:
 
 ---
 
-## 🟣 3. Core Building Blocks
+### 🟣 3. Core Building Blocks
 
 No syntax yet. Only roles.
 
@@ -128,9 +127,9 @@ It only cares that **every position forces a decision**.
 
 ---
 
-## 🧪 4. How It Behaves in the Wild
+### 🧪 4. How It Behaves in the Wild
 
-### Normal behavior
+#### Normal behavior
 
 - Depth = number of elements
     
@@ -141,7 +140,7 @@ It only cares that **every position forces a decision**.
 - No pruning by default
     
 
-### Edge behavior
+#### Edge behavior
 
 - Empty input still has **one valid outcome**
     
@@ -150,7 +149,7 @@ It only cares that **every position forces a decision**.
 - Large inputs explode exponentially (by design)
     
 
-### Failure modes
+#### Failure modes
 
 - Introducing loops inside recursion
     
@@ -165,7 +164,7 @@ If any of those happen, you are no longer using this pattern — even if recursi
 
 ---
 
-## 🛠️ 5. Real-World Usage Patterns
+### 🛠️ 5. Real-World Usage Patterns
 
 This pattern appears in production more than people admit:
 
