@@ -6,13 +6,13 @@
 
   https://leetcode.com/problems/permutations/ :contentReference[oaicite:0]{index=0}
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-40|40. Combination Sum II]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-40|40. Combination Sum II]]**
 
   _Combine with choice enumeration and structural duplicate skipping_
 
   https://leetcode.com/problems/combination-sum-ii/ :contentReference[oaicite:1]{index=1}
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-131|131. Palindrome Partitioning]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-131|131. Palindrome Partitioning]]**
 
   _Partition string with loop-driven start indices_
 
