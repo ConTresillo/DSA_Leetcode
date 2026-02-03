@@ -1,6 +1,6 @@
 ## ⚠️ Unit-MultiChoiceRecursion LeetCode — MEDIUM
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-46|46. Permutations]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-46|46. Permutations]]**
 
   _Enumerate all ordering choices via loop + recursion_
 
