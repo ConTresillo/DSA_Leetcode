@@ -18,13 +18,13 @@
 
   https://leetcode.com/problems/palindrome-partitioning/ :contentReference[oaicite:2]{index=2}
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-93|93. Restore IP Addresses]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-93|93. Restore IP Addresses]]**
 
   _Enumerate segment splits via loop + recursive backtrack_
 
   https://leetcode.com/problems/restore-ip-addresses/ :contentReference[oaicite:3]{index=3}
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-22|22. Generate Parentheses]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-22|22. Generate Parentheses]]**
 
   _Choice-driven recursive construction of legal structures_
 
