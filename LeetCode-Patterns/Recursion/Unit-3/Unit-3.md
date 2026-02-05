@@ -436,3 +436,244 @@ You’ve already _used_ this correctly — now it’s formally validated.
 👉 **Ready to proceed to Submodule 3.2.1 — State → Explore → Undo**,  
 or do you want a **LeetCode-only validation set** specifically for 3.1.2 before moving on?
 
+Got it. You’re right — we start **directly at Module 3.2**.  
+No backtracking into 3.1.
+
+I’ll follow the flow **cleanly and strictly**.
+
+---
+
+
+
+# 📦 Module 3.2: Backtracking Core Pattern
+
+You’ve _used_ backtracking already.  
+Now we **lock the mental model** so it stops feeling magical or accidental.
+
+---
+
+## 🧩 Submodule 3.2.1: State → Explore → Undo
+
+This is the **core mechanic** behind _every_ backtracking solution you’ve written so far  
+(subsets, combinations, permutations, parentheses, palindrome partitioning).
+
+---
+
+### 🟢 1. Mental Model
+
+The most common early mental model is:
+
+- “Recursion will somehow manage the state for me”
+    
+- “I add something, recurse, and things magically reset”
+    
+- “I trust the stack but I don’t _see_ what it’s preserving”
+    
+
+That model _works_ until:
+
+- you mutate shared structures
+    
+- you reuse buffers
+    
+- you introduce pruning
+    
+- you add constraints
+    
+
+Then it starts to feel unstable.
+
+The correct shift is this:
+
+> **Recursion does NOT manage your state.  
+> You do. Explicitly. Every time.**
+
+Backtracking is not a special algorithm.
+
+It is **manual state control across recursive branches**.
+
+- You **change** the world
+    
+- You **walk forward**
+    
+- You **rewind** the world to exactly how it was
+    
+
+Nothing is implicit.  
+Nothing is automatic.
+
+Once you see it this way, recursion stops being scary —  
+it becomes a controlled simulation.
+
+---
+
+### 🔵 2. Why This Exists
+
+Before this pattern, people tried:
+
+- Copying lists on every call
+    
+- Returning massive structures upward
+    
+- Using sets/maps to “clean up” duplicates later
+    
+- Relying on globals without discipline
+    
+
+All of these _work_, but they fight the problem.
+
+Backtracking exists because:
+
+- Many problems require **exploring all valid paths**
+    
+- Paths share **prefixes**
+    
+- Copying prefixes repeatedly is wasteful
+    
+- Returning partial paths upward is awkward
+    
+
+So instead:
+
+> Keep **one mutable path**,  
+> mutate it **in place**,  
+> and rewind after exploration.
+
+That’s the entire reason this pattern exists.
+
+---
+
+### 🟣 3. Core Building Blocks
+
+There are only **three**. Always. No exceptions.
+
+- **State**
+    
+    - The thing that represents the current path
+        
+    - Examples you already used:
+        
+        - `work` list
+            
+        - current string builder
+            
+        - partial permutation
+            
+        - current sum / count
+            
+- **Explore**
+    
+    - A recursive call that assumes the state is correct
+        
+    - It does **not** clean up after itself
+        
+    - It trusts you completely
+        
+- **Undo**
+    
+    - Manual reversal of exactly what you changed
+        
+    - Not “reset everything”
+        
+    - Only undo _your_ mutation
+        
+
+If you cannot point to these three in your code,  
+you are not backtracking — you are guessing.
+
+---
+
+### 🧪 4. How It Behaves in the Wild
+
+**Normal case**
+
+- State grows
+    
+- Recursive call explores deeper
+    
+- State shrinks back
+    
+
+**Edge case**
+
+- Base condition triggers early
+    
+- Undo still runs
+    
+- Parent continues cleanly
+    
+
+**Failure mode**
+
+- Undo is missing or misplaced
+    
+- State leaks across branches
+    
+- Duplicates appear
+    
+- Constraints stop making sense
+    
+- Output explodes or vanishes
+    
+
+This explains _every_ bug you hit earlier:
+
+- missing `pop()`
+    
+- popping too early
+    
+- copying instead of undoing
+    
+- trusting recursion to “fix it”
+    
+
+---
+
+### 🛠️ 5. Real-World Usage Patterns
+
+This pattern shows up everywhere:
+
+- Subsets / combinations
+    
+- Permutations
+    
+- Parentheses generation
+    
+- Grid path exploration
+    
+- Constraint satisfaction problems
+    
+- Puzzle solvers
+    
+- Scheduling / allocation systems
+    
+
+Professionals don’t memorize solutions.
+
+They ask one question:
+
+> “What is my state, and how do I rewind it safely?”
+
+That’s it.
+
+---
+
+## ⛔ HARD STOP
+
+We do **not** move to pruning yet.
+
+Before Submodule **3.2.2**, you must be able to answer — without code:
+
+- What is the **state** in a problem?
+    
+- What exactly is mutated?
+    
+- What must be undone?
+    
+- Why recursion alone is insufficient
+    
+
+When that feels obvious, we proceed.
+
+👉 Say **“go 3.2.2”** when ready.
+
