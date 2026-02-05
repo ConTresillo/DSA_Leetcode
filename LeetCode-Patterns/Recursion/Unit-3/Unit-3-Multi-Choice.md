@@ -6,7 +6,7 @@
 
   https://leetcode.com/problems/permutations/ :contentReference[oaicite:0]{index=0}
 
-- [ ] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-40|40. Combination Sum II]]**
+- [x] **[[LeetCode-Patterns/Recursion/Unit-MultiChoiceRecursion/LC-Qns/LC-40|40. Combination Sum II]]**
 
   _Combine with choice enumeration and structural duplicate skipping_
 
