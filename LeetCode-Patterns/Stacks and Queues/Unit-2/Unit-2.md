@@ -204,238 +204,141 @@ Here is the **Ultimate Summary — Unit 2.1.1 Only**
 
 No spillover. Only this topic.
 
----
-
-# 🧠 UNIT 2.1.1 — Monotonic Stack
-
-## Pattern: Next Greater / Next Smaller
 
 ---
 
-## 1️⃣ What Problem It Solves
+# 🔷 Monotonic Stack — Minimal Guide
 
-Brute force idea:
+## 1️⃣ What It Solves
 
-For every element:
+Use it when the problem asks for:
 
-- Scan right
+- Next smaller
     
-- Find first greater (or smaller)
+- Previous smaller
+    
+- Next greater
+    
+- Previous greater
+    
+- “First element that breaks monotonic order”
     
 
-Time = O(n²)
-
-Monotonic stack compresses this to:
-
-Time = O(n)
+That’s it.
 
 ---
 
-## 2️⃣ Core Structural Invariant
+# 2️⃣ Core Idea
 
-For Next Greater (scan left → right):
+Stack stores **indices**.
 
-Maintain a **decreasing stack**.
+Stack is kept either:
 
-Invariant:
+- Increasing (values increasing bottom → top)
+    
+- Decreasing (values decreasing bottom → top)
+    
 
-```
-Stack elements strictly decreasing from bottom → top
-```
-
-Why?
-
-Because if current element `x` is greater than stack.top:
-
-Then stack.top has found its next greater.
-
-So we pop it.
-
-That pop is irreversible.
-
----
-
-## 3️⃣ Core Algorithm Skeleton
-
-For each element `arr[i]`:
-
-```
-while stack not empty AND arr[i] > stack.top:
-    pop stack.top (its answer is arr[i])
-
-push arr[i]
-```
-
-That’s the entire mechanism.
-
----
-
-## 4️⃣ Why It Is O(n)
+When the order breaks, you pop.
 
 Each element:
 
-- Is pushed once.
+- Pushed once
     
-- Is popped at most once.
+- Popped once  
+    → O(n)
     
 
-Total stack operations:
+---
+
+# 3️⃣ The Only Rule That Matters
+
+Ask:
+
+> What invalidates dominance?
+
+If a smaller element invalidates bigger ones →  
+Pop while `stack_top > current`
+
+If a larger element invalidates smaller ones →  
+Pop while `stack_top < current`
+
+That’s the whole decision.
+
+---
+
+# 4️⃣ Stack Type Cheat Table
+
+|Goal|Pop While|Stack Type|
+|---|---|---|
+|Next Smaller|top > current|Increasing|
+|Next Greater|top < current|Decreasing|
+|Prev Smaller|top >= current|Increasing|
+|Prev Greater|top <= current|Decreasing|
+
+(Strict vs non-strict handles duplicates.)
+
+---
+
+# 5️⃣ Direction Guide
+
+You can go left → right always.
+
+Left → Right naturally gives:
+
+- Previous answers directly (after popping)
+    
+- Next answers during pop
+    
+
+Right → Left is optional convenience.
+
+Direction does NOT define next/prev automatically.
+
+---
+
+# 6️⃣ Pattern Template (Left → Right)
 
 ```
-pushes ≤ n
-pops ≤ n
+for i in range(n):
+    while stack and arr[stack[-1]] > arr[i]:
+        idx = stack.pop()
+        # current is answer for idx (next smaller)
+
+    # after popping:
+    # stack[-1] is previous smaller (if exists)
+
+    stack.append(i)
 ```
 
-Total ≤ 2n → O(n)
+Change `>` to `<` for greater problems.
 
 ---
 
-## 5️⃣ Why Each Element Pops Only Once
+# 7️⃣ When You See a Problem
 
-Because:
+Step 1: Is this nearest greater/smaller?  
+If yes → monotonic stack candidate.
 
-- We scan strictly in one direction.
-    
-- Once popped, an element is permanently resolved.
-    
-- It never re-enters the stack.
-    
-- There is no mechanism to revisit earlier elements.
-    
+Step 2: Who invalidates whom?  
+That determines pop condition.
 
-This is an **irreversible elimination process**.
+Step 3: Decide strict vs non-strict for duplicates.
 
-No cycles.  
-No resurrection.
+Done.
 
 ---
 
-## 6️⃣ What Would Break O(n)
+# 8️⃣ Mental Shortcut
 
-If:
-
-- We re-scan the array.
-    
-- Or reinsert popped elements.
-    
-- Or revisit earlier indices.
-    
-
-Then elements could:
-
-- Be pushed again.
-    
-- Be popped again.
-    
-
-Amortization collapses.
-
-The single-pass + irreversibility guarantee is critical.
+Smaller kills bigger → use increasing stack  
+Bigger kills smaller → use decreasing stack
 
 ---
 
-## 7️⃣ Variations You Must Recognize
+That’s the entire system compressed.
 
-Same skeleton, only change:
-
-- Traversal direction
-    
-- Comparison operator
-    
-
-You can compute:
-
-- Next Greater Right
-    
-- Next Greater Left
-    
-- Next Smaller Right
-    
-- Previous Smaller
-    
-- Distance to next greater
-    
-- Indices instead of values
-    
-
-It’s the same invariant engine.
-
----
-
-## 8️⃣ Mental Compression Model
-
-Monotonic stack =
-
-- One-pass scan
-    
-- Stack enforces order
-    
-- New element eliminates weaker previous elements
-    
-- Each element dies once
-    
-
-Think of it as:
-
-> Competitive elimination tournament.
-
-When a stronger element appears, weaker ones lose permanently.
-
----
-
-## 9️⃣ What You Must Internalize
-
-This is not a stack problem.
-
-It is a:
-
-> One-directional irreversible elimination system.
-
-The stack is just the tool.
-
-The real idea is:
-
-- Eliminate useless elements immediately.
-    
-- Never revisit resolved states.
-    
-
----
-
-## 🔟 Where This Pattern Appears
-
-- Daily Temperatures
-    
-- Next Greater Element I & II
-    
-- Stock Span
-    
-- Largest Rectangle in Histogram
-    
-- Trapping Rain Water
-    
-- Sum of Subarray Minimums
-    
-
-High-frequency interview territory.
-
----
-
-## 🚀 Final Structural Takeaway
-
-Monotonic stack works because:
-
-- Traversal is one-directional.
-    
-- Decisions are irreversible.
-    
-- Each element participates in ≤ 2 stack events.
-    
-
-That guarantees linear time.
-
----
-
+If you want, I can now give you 3 ultra-small test cases to see if this is fully clear.
 # 🧩 Submodule 2.1.2 — Span & Distance Formulation
 
 ---
@@ -851,3 +754,368 @@ And maintains monotonic order such that:
 This guarantees correct span calculation.
 
 ---
+Good.  
+You don’t need more stack theory.  
+You need to know how to _apply_ next/prev information.
+
+Here is the practical guide.
+
+---
+
+# 🔷 Step 1: Recognize the Pattern
+
+If the question involves:
+
+- Subarrays
+    
+- “For every element, how many…”
+    
+- Range dominance
+    
+- First smaller/greater boundary
+    
+- Histogram-style expansion
+    
+
+Then you’re in **boundary counting mode**.
+
+Stop thinking enumeration.  
+Start thinking influence range.
+
+---
+
+# 🔷 Step 2: Translate to Boundary Language
+
+Convert the problem into this form:
+
+> For each index `i`, find how far it can expand before condition breaks.
+
+That condition is either:
+
+- Smaller element appears
+    
+- Greater element appears
+    
+
+Those breakpoints are exactly:
+
+- Previous X
+    
+- Next X
+    
+
+---
+
+# 🔷 Step 3: Once You Have Prev and Next
+
+You usually do one of these:
+
+---
+
+## Case A: Contribution Counting
+
+Used in:
+
+- Sum of subarray minimums
+    
+- Sum of subarray maximums
+    
+- Total strength type problems
+    
+
+Formula:
+
+[  
+\text{Contribution} = value \times (i - prev) \times (next - i)  
+]
+
+Interpretation:
+
+- Left choices × Right choices
+    
+- Number of subarrays where element dominates
+    
+
+---
+
+## Case B: Width Calculation
+
+Used in:
+
+- Largest Rectangle in Histogram
+    
+
+Formula:
+
+$$
+[  
+\text{Width} = next - prev - 1  
+]
+$$
+
+Then:
+
+$$
+[  
+\text{Area} = height \times width  
+]
+
+$$
+Interpretation:
+
+- This element is smallest in that entire width
+    
+
+---
+
+## Case C: Immediate Query
+
+Used in:
+
+- Next Greater Element
+    
+- Stock Span
+    
+
+You directly store the next/prev answer.
+
+---
+
+# 🔷 Step 4: The General Decision Framework
+
+When you see a question, ask:
+
+### 1️⃣ Is this about nearest breakpoints?
+
+If yes → monotonic stack.
+
+### 2️⃣ Does each element “control” a range?
+
+If yes → you’ll multiply distances.
+
+### 3️⃣ Is this about largest area / max window?
+
+If yes → width = next - prev - 1.
+
+---
+
+# 🔷 Step 5: Mental Checklist for New Problems
+
+When reading a question:
+
+- Is there “first greater/smaller” language?
+    
+- Is it about subarrays?
+    
+- Is it about dominance?
+    
+- Is brute force O(n²) too slow?
+    
+- Can I reframe it as: “How far can each element expand?”
+    
+
+If yes → think prev/next.
+
+---
+
+# 🔷 Why This Cracks Questions
+
+Because most “hard” stack problems are secretly:
+
+> Count how long an element survives before something stronger appears.
+
+Once you see that,  
+you stop memorizing solutions.
+
+You identify structure.
+
+---
+
+If you want, give me any monotonic stack problem name and I’ll show you how to detect which pattern it belongs to in under 30 seconds.
+
+Good.
+
+We proceed in order.
+
+---
+
+# 🏗️ UNIT 2 — Monotonic Structures
+
+## 📦 Module 2.2 — Monotonic Queue
+
+### 🔹 Submodule 2.2.1 — Sliding Window Maximum Pattern
+
+---
+
+# 🧩 Submodule 2.2.1 — Sliding Window Maximum Pattern
+
+---
+
+## 🟢 1. Mental Model
+
+Forget stack elimination.
+
+Now think:
+
+> “I have a moving window of size k.  
+> At every position, I need the maximum inside that window.”
+
+Brute force:
+
+- For every window
+    
+- Scan k elements
+    
+- Pick max  
+    → O(nk)
+    
+
+We want:
+
+> O(n) total.
+
+So the question becomes:
+
+How do I maintain the maximum **while the window moves**, without rescanning?
+
+This is not a boundary problem.
+
+This is:
+
+> Maintain optimal candidate under insert + expiry.
+
+---
+
+## 🔵 2. Why This Exists
+
+Brute force fails because:
+
+- Each element gets revisited multiple times.
+    
+- You recompute information you already knew.
+    
+
+What we want instead:
+
+- Each element should be “processed” once.
+    
+- When something stronger appears, weaker elements become irrelevant.
+    
+- When something exits window, remove it cleanly.
+    
+
+This is dynamic elimination + expiry.
+
+---
+
+## 🟣 3. Core Building Blocks
+
+We use a **deque**.
+
+It maintains:
+
+1. **Decreasing order of values**
+    
+2. Stores **indices**, not values
+    
+3. Removes elements from:
+    
+    - Back → if smaller than current
+        
+    - Front → if outside window
+        
+
+Two invariants:
+
+### Invariant A — Monotonic Decreasing
+
+Front always holds the maximum.
+
+### Invariant B — Valid Window
+
+Front index must be within current window.
+
+---
+
+## 🧪 4. How It Behaves in the Wild
+
+Let’s reason structurally:
+
+When a new element arrives:
+
+- Remove all smaller elements from back.
+    
+- Why? Because they can never become max again.
+    
+
+When window moves:
+
+- Remove front if it falls outside window.
+    
+- Why? Because it expired.
+    
+
+So each element:
+
+- Enters once
+    
+- Leaves once
+    
+
+Amortized O(n).
+
+---
+
+## 🛠️ 5. Real-World Usage Patterns
+
+This pattern appears in:
+
+- Sliding window maximum
+    
+- Real-time streaming analytics
+    
+- Stock price tracking over intervals
+    
+- Temperature trends
+    
+- Rate limiting systems
+    
+
+Professionals misuse it when:
+
+- They forget to remove expired indices.
+    
+- They store values instead of indices.
+    
+- They break the monotonic invariant.
+    
+
+---
+
+Now let’s test understanding.
+
+Imagine:
+
+nums = [1, 3, -1, -3, 5, 3, 6, 7]  
+k = 3
+
+Before coding anything:
+
+Tell me:
+
+What exactly should be inside the deque  
+after processing the first 3 elements?
+
+Not values.
+
+Indices.
+
+Reason it.
+
+Monotonic Stack = elimination logic  
+Monotonic Queue = elimination + expiry logic
+
+It’s the same dominance idea.
+
+Just with an added boundary constraint.
+
